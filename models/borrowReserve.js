@@ -33,7 +33,7 @@ function checkReserve(req, res){
     });
 }
 
-// 대출/예약 현황 목록 처리
+// 대출/예약 현황 목록
 function borrowReserve(req, res){
     var userNo = req.session.userNo;
     pool.getConnection(function(err, con){

@@ -15,44 +15,36 @@ function slideBook(req, res){
             var temp1;
             var rnum1;
             var arr1 = new Array();
-
             for(var i = 0; i < JSON.parse(JSON.stringify(result1)).length; i++){
                 tempArr1.push(JSON.parse(JSON.stringify(result1))[i]);
             }
-
             for(var i = 0; i < JSON.parse(JSON.stringify(result1)).length; i++){
                 rnum1 = Math.floor(Math.random()*(JSON.parse(JSON.stringify(result1)).length-1));
                 temp1 = tempArr1[i];
                 tempArr1[i] = tempArr1[rnum1];
                 tempArr1[rnum1] = temp1;
             }
-
             for(var i = 0; i < 5; i++){
                 arr1.push(tempArr1[i]);
             }
-
             var sql = 'select bkNo, bkName from book where bkPrefer > ?';
             con.query(sql, [7], function(err, result2){
                 var tempArr2 = new Array();
                 var temp2;
                 var rnum2;
                 var arr2 = new Array();
-
                 for(var i = 0; i < JSON.parse(JSON.stringify(result2)).length; i++){
                     tempArr2.push(JSON.parse(JSON.stringify(result2))[i]);
                 }
-
                 for(var i = 0; i < JSON.parse(JSON.stringify(result2)).length; i++){
                     rnum2 = Math.floor(Math.random()*(JSON.parse(JSON.stringify(result2)).length-1));
                     temp2 = tempArr2[i];
                     tempArr2[i] = tempArr2[rnum2];
                     tempArr2[rnum2] = temp2;
                 }
-
                 for(var i = 0; i < 5; i++){
                     arr2.push(tempArr2[i]);
                 }
-
                 res.render('main.ejs', {"newBook":arr1, "bestBook":arr2});
             });
         });
@@ -143,22 +135,18 @@ function customizeResult(req, res){
             var temp;
             var rnum;
             var arr = new Array();
-
             for(var i = 0; i < JSON.parse(JSON.stringify(result)).length; i++){
                 tempArr.push(JSON.parse(JSON.stringify(result))[i]);
             }
-
             for(var i = 0; i < JSON.parse(JSON.stringify(result)).length; i++){
                 rnum = Math.floor(Math.random()*(JSON.parse(JSON.stringify(result)).length-1));
                 temp = tempArr[i];
                 tempArr[i] = tempArr[rnum];
                 tempArr[rnum] = temp;
             }
-
             for(var i = 0; i < 3; i++){
                 arr.push(tempArr[i]);
             }
-
             res.send(200, JSON.parse(JSON.stringify(arr)));
         });
         con.release;

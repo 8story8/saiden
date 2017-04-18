@@ -1,4 +1,4 @@
-// db.js : DBCP 환경 설정 역할을 담당
+// db.js : DBCP 환경 설정
 
 var mysql = require('mysql');
 var pool = mysql.createPool({
