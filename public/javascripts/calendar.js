@@ -1,6 +1,6 @@
-//-----------------------------------------------CSS 적용을 위한 함수
+// calendar.js : 달력
 
-function calendar(tYear,tMonth){ //달력 함수
+function calendar(tYear,tMonth){
 
     var nowDate = new Date();               //오늘 날짜 객체 선언
     var nYear = nowDate.getFullYear();      //오늘의 년도
