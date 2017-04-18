@@ -1,4 +1,5 @@
-// Express 서버 생성
+// Express Server
+
 var express = require('express');
 var app = express();
 var path = require('path');
