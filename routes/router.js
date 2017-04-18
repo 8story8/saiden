@@ -1,4 +1,4 @@
-// router.js : Controller 역할을 담당하며 Program의 흐름을 제어
+// Controller
 
 var express = require('express');
 var router = express.Router();
