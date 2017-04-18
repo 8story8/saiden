@@ -1,0 +1,86 @@
+<!--대출/예약 현황 페이지-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,user-scalable=no"/>
+    <link type="text/css" href="stylesheets/style.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>대출/예약 현황</title>
+</head>
+
+<body>
+<header>
+    <div><a href = "/login"><img id = "logo1" src = "images/etc/logo1.jpg" alt = "logo1"></a></div>
+    <div>
+        <ul>
+            <li><img id = "logo2" src = "images/etc/logo2.jpg" alt = "logo2"></li>
+            <br/>
+
+            <li class = "search">
+                <form action = "/search">
+                    <input type = "text" id = "book" name = "bookInfo" required = "required">
+                    <input type = "submit" id = "search" value = "도서 검색">
+                </form>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <form action = "/logout" method = "post">
+            <span><%=userId%>님</span>
+            <input type = "submit" value = "로그아웃" id = "logout">
+        </form>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li id = "notice"><a href = "/notice">공지사항</a></li>
+        <li id = "recommend"><a href = "/customize">맞춤형 추천 도서</a></li>
+        <li id = "borrow"><a href = "/borrowReserve">대출/예약 현황</a></li>
+        <li id = "mypage"><a href = "/myPage">마이 페이지</a></li>
+    </ul>
+</nav>
+<section>
+    <div id = "borrowReserveDiv">
+        <div id = "borrowDiv">
+            <h3>대출 현황</h3>
+            <hr>
+            <div id = "borrowDetailDiv">
+            <table cellpadding="17px">
+                <tr>
+                    <th>도서번호</th><th>도서명</th><th>대출일</th><th>반납일</th>
+                </tr>
+            <%for(var i = 0; i < borrow.length; i++){%>
+                <tr>
+                    <td><%=borrow[i].bkNo%></td><td><%=borrow[i].bkName%></td><td><%=borrow[i].brBDate%></td><td><%=borrow[i].brRDate%></td>
+                </tr>
+            <%}%>
+            </table>
+            </div>
+        </div>
+        <div id = "reserveDiv">
+            <h3>예약 현황</h3>
+            <hr>
+            <div id = "reserveDetailDiv">
+            <table  cellpadding="17px">
+                <tr>
+                    <th>도서번호</th><th>도서명</th><th>예약일</th>
+                </tr>
+                <%for(var i = 0; i < reserve.length; i++){%>
+                <tr>
+                    <td><%=reserve[i].bkNo%></td><td><%=reserve[i].bkName%></td><td><%=reserve[i].rsRDate%></td>
+                </tr>
+                <%}%>
+            </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div id = "private">개인 정보 처리 방침</div>
+    <div id = "path">찾아오시는 길</div>
+</footer>
+</body>
+</html>

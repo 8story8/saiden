@@ -1,0 +1,245 @@
+<!--도서 상세 보기 페이지-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,user-scalable=no"/>
+    <link type="text/css" href="stylesheets/style.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>도서 상세 보기</title>
+    <script>
+        function bookLocate(){
+            var bookLocate = $('#bookLocate');
+            bookLocate.empty();
+            var output = '';
+            output += '<tr>';
+            output += '<td width="100px" nowrap id = "1">1</td><td style="border-top: none; border-bottom: none; border-left: none; border-right: none;"></td><td width="100px" nowrap id = "4">4</td>';
+            output += '</tr>';
+            output += '<tr>';
+            output += '<td width="100px" nowrap id = "2">2</td><td style="border-top: none; border-bottom: none; border-left: none; border-right: none;"></td><td width="100px" nowrap id = "5">5</td>';
+            output += '</tr>';
+            output += '<tr>';
+            output += '<td width="100px" nowrap id = "3">3</td><td style="border-top: none; border-bottom: none; border-left: none; border-right: none;"></td><td width="100px" nowrap id = "6">6</td>';
+            output += '</tr>';
+            output += '<tr>';
+            output += '<td style="border-top: none; border-bottom: none; border-left: none; border-right: none;"></td><td width="70px" nowrap>입구</td><td style="border-top: none; border-bottom: none; border-left: none; border-right: none;"></td>';
+            output += '</tr>';
+            bookLocate.append(output);
+
+            $(document).ready(function() {
+                var td1 = $('#bookLocate #1');
+                var td2 = $('#bookLocate #2');
+                var td3 = $('#bookLocate #3');
+                var td4 = $('#bookLocate #4');
+                var td5 = $('#bookLocate #5');
+                var td6 = $('#bookLocate #6');
+
+                if(td1.text() == '<%=bookDetail[0].bkNo.substring(1, 2)%>'){
+                    td1.css("background-color", "#FFF064");
+                    td1.click(function() {
+                        bookLocateDetail();
+                    });
+                }
+                else if(td2.text() == '<%=bookDetail[0].bkNo.substring(1, 2)%>'){
+                    td2.css("background-color", "#FFF064");
+                    td2.click(function() {
+                        bookLocateDetail();
+                    });
+                }
+                else if(td3.text() == '<%=bookDetail[0].bkNo.substring(1, 2)%>'){
+                    td3.css("background-color", "#FFF064");
+                    td3.click(function() {
+                        bookLocateDetail();
+                    });
+                }
+                else if(td4.text() == '<%=bookDetail[0].bkNo.substring(1, 2)%>'){
+                    td4.css("background-color", "#FFF064");
+                    td4.click(function() {
+                        bookLocateDetail();
+                    });
+                }
+                else if(td5.text() == '<%=bookDetail[0].bkNo.substring(1, 2)%>'){
+                    td5.css("background-color", "#FFF064");
+                    td5.click(function() {
+                        bookLocateDetail();
+                    });
+                }
+                else if(td6.text() == '<%=bookDetail[0].bkNo.substring(1, 2)%>'){
+                    td6.css("background-color", "#FFF064");
+                    td6.click(function() {
+                        bookLocateDetail();
+                    });
+                }
+            });
+        }
+
+        function bookLocateDetail(){
+            var bookLocateDetail = $('#bookLocate');
+            bookLocateDetail.empty();
+            var output = '';
+            output += '<tr>';
+            output += '     <td id = "d1" width="70px" nowrap>1</td><td id = "d2" width="70px" nowrap>2</td><td id = "d3" width="70px" nowrap>3</td>';
+            output += '</tr>';
+            output += '<tr>';
+            output += '<td id = "d4" width="70px" nowrap>4</td><td id = "d5" width="70px" nowrap>5</td><td id = "d6" width="70px" nowrap>6</td>';
+            output += '</tr>';
+            bookLocateDetail.append(output);
+
+            $(document).ready(function() {
+                var td1 = $('#bookLocate #d1');
+                var td2 = $('#bookLocate #d2');
+                var td3 = $('#bookLocate #d3');
+                var td4 = $('#bookLocate #d4');
+                var td5 = $('#bookLocate #d5');
+                var td6 = $('#bookLocate #d6');
+
+                if(td1.text() == '<%=bookDetail[0].bkNo.substring(2, 3)%>'){
+                    td1.css("background-color", "#FFF064");
+                    td1.click(function(event) {
+                        bookLocate();
+                    });
+                }
+                else if(td2.text() == '<%=bookDetail[0].bkNo.substring(2, 3)%>'){
+                    td2.css("background-color", "#FFF064");
+                    td2.click(function(event) {
+                        bookLocate();
+                    });
+                }
+                else if(td3.text() == '<%=bookDetail[0].bkNo.substring(2, 3)%>'){
+                    td3.css("background-color", "#FFF064");
+                    td3.click(function(event) {
+                        bookLocate();
+                    });
+                }
+                else if(td4.text() == '<%=bookDetail[0].bkNo.substring(2, 3)%>'){
+                    td4.css("background-color", "#FFF064");
+                    td4.click(function(event) {
+                        bookLocate();
+                    });
+                }
+                else if(td5.text() == '<%=bookDetail[0].bkNo.substring(2, 3)%>'){
+                    td5.css("background-color", "#FFF064");
+                    td5.click(function(event) {
+                        bookLocate();
+                    });
+                }
+                else if(td6.text() == '<%=bookDetail[0].bkNo.substring(2, 3)%>'){
+                    td6.css("background-color", "#FFF064");
+                    td6.click(function(event) {
+                        bookLocate();
+                    });
+                }
+            });
+        }
+    </script>
+</head>
+
+<body onload = bookLocate()>
+<header>
+    <div><a href = '/login'><img id = "logo1" src = "images/etc/logo1.jpg" alt = "logo1"></a></div>
+    <div>
+        <ul>
+            <li><img id = "logo2" src = "images/etc/logo2.jpg" alt = "logo2"></li>
+            <br/>
+            <li class = "search">
+                <form action = "/search">
+                    <input type = "text" id = "book" name = "bookInfo" required = "required">
+                    <input type = "submit" id = "search" value = "도서 검색">
+                </form>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <form action = "/logout" method = "post">
+            <span><%=userId%>님</span>
+            <input type = "submit" value = "로그아웃" id = "logout">
+        </form>
+    </div>
+</header>
+<nav>
+    <ul>
+        <li id = "notice"><a href = "/notice">공지사항</a></li>
+        <li id = "recommend"><a href = "/customize">맞춤형 추천 도서</a></li>
+        <li id = "borrow"><a href = "/borrowReserve">대출/예약 현황</a></li>
+        <li id = "mypage"><a href = "/myPage">마이 페이지</a></li>
+    </ul>
+</nav>
+<section>
+    <div id = "searchDiv">
+        <div id = "searchDivDetail">
+            <h3><b>도서 상세 정보</b></h3>
+            <hr>
+            <div style="overflow: auto" id = "bookList">
+
+                <script>
+                 $(document).ready(function () {
+                     var bookNo = "<%=bookDetail[0].bkNo%>"
+                     $.ajax({
+                         type: 'POST',
+                         url: '/checkBorrow',
+                         data: {'bookNo':bookNo},
+                         success: function (data) {
+                             if(data == 0){
+                                 $('#borrowSpan').text("대출 가능");
+                             }
+                             else if(data == 1){
+                                 $('#borrowSpan').text("대출 불가");
+                             }
+                         }
+                     });
+                 });
+
+                 $(document).ready(function () {
+                     var bookNo = "<%=bookDetail[0].bkNo%>"
+                     $.ajax({
+                         type: 'POST',
+                         url: '/checkReserve',
+                         data: {'bookNo':bookNo},
+                         success: function (data) {
+                             if(data == 0){
+                                 $('#reserveSpan').text("예약 가능");
+                             }
+                             else if(data == 1){
+                                 if( $('#borrowSpan').text() == "대출 가능"){
+                                     $('#reserveSpan').text("예약 가능");
+                                 }
+                                 else{
+                                     $('#reserveSpan').text("예약 불가");
+                                 }
+                             }
+                         }
+                     });
+                 });
+                </script>
+                <table id = "bookInfo">
+                    <tr>
+                        <td><img src = "images/book/<%=bookDetail[0].bkNo%>.jpg" alt = "bookPhoto" width = "160px" height="210px"></td>
+                        <td>
+                            <p>도서번호 : <%=bookDetail[0].bkNo%></p>
+                            <p>도서명 : <%=bookDetail[0].bkName%> &nbsp;|&nbsp; 저자명 : <%=bookDetail[0].bkAuth%></p>
+                            <p>출판사 : <%=bookDetail[0].bkPub%> &nbsp;|&nbsp; 출판일 : <%=bookDetail[0].bkPubDate%></p>
+                            <p>장르 : <%=bookDetail[0].bkGenre%> &nbsp;|&nbsp; 인기도 : <%=bookDetail[0].bkPrefer%></p>
+                            <p>위치 : 세이덴도서관 제<%=bookDetail[0].bkNo.charAt(0)%>문헌정보실 <%=bookDetail[0].bkNo.substring(1, 2)%>번책장 <%=bookDetail[0].bkNo.substring(2, 3)%>번선반</p>
+                            <p>
+                                <span id = 'borrowSpan'></span> &nbsp;|&nbsp; <span id = 'reserveSpan'></span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+
+                <table id = "bookLocate">
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div id = "private">개인 정보 처리 방침</div>
+    <div id = "path">찾아오시는 길</div>
+</footer>
+</body>
+</html>

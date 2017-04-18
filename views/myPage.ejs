@@ -1,0 +1,115 @@
+<!--마이 페이지-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,user-scalable=no"/>
+    <link type="text/css" href="stylesheets/style.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>마이 페이지</title>
+</head>
+
+<body>
+<header>
+
+    <div><a href = "/login"><img id = "logo1" src = "images/etc/logo1.jpg"  alt = "logo1"></a></div>
+    <div>
+        <ul>
+
+            <li><img id = "logo2" src = "images/etc/logo2.jpg" alt = "logo2"></li>
+            <br/>
+
+            <li class = "search">
+                <form action = "/search">
+                    <input type = "text" id = "book" name = "bookInfo" required = "required">
+                    <input type = "submit" id = "search" value = "도서 검색">
+                </form>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <form action = "/logout" method = "post">
+            <span><%=userId%>님</span>
+            <input type = "submit" value = "로그아웃" id = "logout">
+        </form>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li id = "notice"><a href = "/notice">공지사항</a></li>
+        <li id = "recommend"><a href = "/customize">맞춤형 추천 도서</a></li>
+        <li id = "borrow"><a href = "/borrowReserve">대출/예약 현황</a></li>
+        <li id = "mypage"><a href = "/myPage">마이 페이지</a></li>
+    </ul>
+</nav>
+<section>
+    <script>
+        function checkPw(){
+            var ipw = $('#iPw').val();
+            var ipwc = $('#iPwc').val();
+
+            if(ipw != ipwc){
+                $('#iPwAlert').css({"color":'red'});
+                $('#iPwAlert').html("비밀번호가 일치하지 않습니다!");
+            }
+            else{
+                $('#iPwAlert').css({"color":'green'});
+                $('#iPwAlert').html("비밀번호가 일치합니다!");
+            }
+        }
+
+        function checkForm()
+        {
+            var iPwAlert = document.getElementById('iPwAlert').innerText;
+
+            if(iPwAlert == "비밀번호가 일치합니다!"){
+                alert("회원정보 수정이 완료되었습니다!");
+                return true;
+            }
+            else{
+                alert("비밀번호가 일치하지 않습니다!");
+                return false;
+            }
+        }
+    </script>
+    <div id = "myPageDiv">
+        <div id = "myPageUpdate">
+            <h3>회원 정보 수정</h3>
+            <hr>
+            <form action = "/myPage/update" method = "post" onsubmit ="return checkForm()">
+                <table cellpadding="20" id = "myPageUpdateTable">
+                    <tr>
+                        <th>아이디</th><td><input type = "text" id = "iId" value = "<%=userId%>" required = "required" readonly style="background-color: #cccccc"></td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호</th><td><input type = "password" name = "iPw" id = "iPw" onkeyup = "checkPw()" required = "required"></td>
+                        <td><span id = "iPwAlert"></span></td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호 확인</th><td><input type = "password" id = "iPwc" onkeyup = "checkPw()" required = "required"></td>
+                    </tr>
+                    <tr>
+                        <th>이름</th><td><input type = "text"  id = "iName" value = "<%=userName%>" required = "required" readonly style="background-color: #cccccc"></td>
+                    </tr>
+                    <tr>
+                        <th>연락처</th><td><input type = "text" name = "iTel" id = "iTel" value = "<%=userTel%>" required = "required"></td>
+                    </tr>
+                    <tr>
+                        <th>이메일</th><td><input type = "text" name = "iEmail" id = "iEmail" value = "<%=userEmail%>" required = "required"></td>
+                    </tr>
+                    <tr>
+                        <td><input type = "submit" value = "수정" id = "myPageUpdate_btn"></td>
+                    </tr>
+            </table>
+        </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div id = "private"><a>개인 정보 처리 방침</a></div>
+    <div id = "path">찾아오시는 길</div>
+</footer>
+</body>
+</html>

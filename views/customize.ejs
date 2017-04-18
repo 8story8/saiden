@@ -1,0 +1,118 @@
+<!--맞춤형 추천 도서 페이지-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,user-scalable=no"/>
+    <link type="text/css" href="stylesheets/style.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>맞춤형 추천 도서</title>
+</head>
+
+<body>
+<header>
+
+    <div><a href = "/login"><img id = "logo1" src = "images/etc/logo1.jpg" alt = "logo1"></a></div>
+    <div>
+        <ul>
+
+            <li><img id = "logo2" src = "images/etc/logo2.jpg" alt = "logo2"></li>
+            <br/>
+
+            <li class = "search">
+                <form action = "/search">
+                    <input type = "text" id = "book" name = "bookInfo" required = "required">
+                    <input type = "submit" id = "search" value = "도서 검색">
+                </form>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <form action = "/logout" method = "post">
+            <span><%=userId%>님</span>
+            <input type = "submit" value = "로그아웃" id = "logout">
+        </form>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li id = "notice"><a href = "/notice">공지사항</a></li>
+        <li id = "recommend"><a href = "/customize">맞춤형 추천 도서</a></li>
+        <li id = "borrow"><a href = "/borrowReserve">대출/예약 현황</a></li>
+        <li id = "mypage"><a href = "/myPage">마이 페이지</a></li>
+    </ul>
+</nav>
+<section>
+    <script>
+        function customize(){
+            var checkCustom = document.getElementsByName("checkCustom");
+            for(var i = 0; i < checkCustom.length; i++){
+                if(checkCustom[i].checked){
+                    var check = checkCustom[i].value;
+                }
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: '/customizeResult',
+                data: {'check':check},
+                success: function (bookInfo) {
+                    $('#customizeResult').empty();
+                    for (var i = 0; i < bookInfo.length; i++) {
+                        var output = '';
+                        output += '<tr>';
+                        output += '     <td>';
+                        output += '<img src = "/images/book/';
+                        output += bookInfo[i].bkNo;
+                        output += '.jpg" width = "125px", height = "155px">';
+                        output += '     </td>';
+                        output += '     <td>';
+                        output += '<p>도서번호 : ' + bookInfo[i].bkNo + '</p>';
+                        output += '<p>도서명 : ' + bookInfo[i].bkName + '&nbsp;|&nbsp;';
+                        output += '저자명 : ' + bookInfo[i].bkAuth + '</p>';
+                        output += '<p>출판사 : ' + bookInfo[i].bkPub + '&nbsp;|&nbsp;';
+                        output += '출판일 : ' + bookInfo[i].bkPubDate + '</p>';
+                        output += '<p>장르 : ' + bookInfo[i].bkGenre + '&nbsp;|&nbsp;';
+                        output += '인기도 : ' + bookInfo[i].bkPrefer + '</p>';
+                        output += '<p>위치 : 세이덴도서관 제' + bookInfo[i].bkNo.charAt(0) + '문헌정보실 ' + bookInfo[i].bkNo.substring(1, 2) + '번 책장 ' + bookInfo[i].bkNo.substring(2, 3) + '줄</p>';
+                        output += '     </td>';
+                        output += '</tr>';
+                        output += ' <hr>';
+                        $('#customizeResult').append(output);
+                    }
+                }
+            });
+        }
+    </script>
+
+    <div id = "customizeDiv">
+        <div id = "customizeDivDetail">
+            <h3>맞춤형 추천 도서</h3>
+            <hr>
+            <table cellpadding="20px">
+                <tr>
+                    <td><input type = "radio" name = "checkCustom" value = "소설"> 소설</td>
+                    <td><input type = "radio" name = "checkCustom" value = "만화"> 만화</td>
+                    <td><input type = "radio" name = "checkCustom" value = "인문"> 인문</td>
+                    <td><input type = "radio" name = "checkCustom" value = "경영/경제"> 경영/경제</td>
+                    <td><input type = "radio" name = "checkCustom" value = "IT"> IT</td>
+                    <td><input type = "radio" name = "checkCustom" value = "자기계발"> 자기계발</td>
+                    <td><input type = "button" onclick = "customize()" value = "확인" id = "customize_btn"></td>
+                </tr>
+            </table>
+            <div style="width:858px; height:457px; overflow:auto" border="1px solid black";>
+            <table id = customizeResult cellpadding="15px">
+
+            </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div id = "private">개인 정보 처리 방침</div>
+    <div id = "path">찾아오시는 길</div>
+</footer>
+</body>
+</html>

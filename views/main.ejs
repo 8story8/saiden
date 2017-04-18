@@ -1,0 +1,553 @@
+<!--메인 페이지-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,user-scalable=no"/>
+    <link type="text/css" href="stylesheets/style.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type = "text/javascript" src="javascripts/calendar.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.notice tr').hover(function () {
+                $(this).addClass('reverse')
+            }, function () {
+                $(this).removeClass('reverse')
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            var findIdPwLayer = $("#findIdPwLayer");
+            var findIdPwLink = $(".findIdPwLink");
+            var findIdPwCont = $(".findIdPwContent");
+            var marginLeft = findIdPwCont.outerWidth()/2;
+            var marginTop = findIdPwCont.outerHeight()/2;
+
+            findIdPwLink.click(function(){
+                findIdPwLayer.fadeIn("slow");
+                findIdPwCont.css({"margin-top" : -marginTop, "margin-left" : -marginLeft});
+                $(this).blur();
+                $(".findIdPwContent > .findIdPwLink").focus();
+                return false;
+            });
+
+            $(".findIdPwContent > #fClose").click(function(){
+                findIdPwLayer.fadeOut("slow");
+                findIdPwLink.focus();
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            var registerLayer = $("#registerLayer");
+            var registerLink = $(".registerLink");
+            var registerCont = $(".registerContent");
+            var marginLeft = registerCont.outerWidth()/2;
+            var marginTop = registerCont.outerHeight()/2;
+
+            registerLink.click(function(){
+                registerLayer.fadeIn("slow");
+                registerCont.css({"margin-top" : -marginTop, "margin-left" : -marginLeft});
+                $(this).blur();
+                $(".registerContent > .registerLink").focus();
+                return false;
+            });
+
+            $(".registerContent > #rClose").click(function(){
+                registerLayer.fadeOut("slow");
+                registerLink.focus();
+            });
+        });
+    </script>
+
+    <script>
+        function unvalidateAlert(){
+            alert('회원가입하신 분들만 서비스를 이용하실 수 있습니다!');
+        }
+    </script>
+    <title>세이덴 홈페이지</title>
+</head>
+
+
+
+<body onload = "calendar()">
+    <header>
+        <div><a href = "/main"><img id = "logo1" src = "images/etc/logo1.jpg" alt = "logo1"></a></div>
+        <div>
+            <ul>
+                <li><img id = "logo2" src = "images/etc/logo2.jpg" alt = "logo2"></li>
+                <br/>
+                <li class = "search">
+                    <form action = "/searchUnauth">
+                        <input type = "text" id = "book" name = "bookInfo"/>
+                        <input type = "submit" id = "search" value = "도서 검색">
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li id = "notice"><a onclick = "unvalidateAlert()">공지사항</a></li>
+            <li id = "recommend"><a onclick = "unvalidateAlert()">맞춤형 추천 도서</a></li>
+            <li id = "borrow"><a onclick = "unvalidateAlert()">대출/예약 현황</a></li>
+            <li id = "mypage"><a onclick = "unvalidateAlert()">마이 페이지</a></li>
+        </ul>
+    </nav>
+    <section>
+
+        <div class = "content1">
+            <div>
+                <table class="notice">
+                    <tr>
+                        <th scope="row">2월 세이덴 도서관 문화가 있는 날 행사 안내</th>
+                        <td>2017-02-16</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2017년 상반기 문화 교실 및 독서회 수강생 모집 안내</th>
+                        <td>2017-02-10</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2017년 세이덴 도서관 강사 공개 채용 합격자 공고</th>
+                        <td>2017-02-02</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2월 세이덴 도서관 휴관일 안내</th>
+                        <td>2017-02-01</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1월 세이덴 도서관 문화가 있는 날 행사 안내</th>
+                        <td>2017-01-25</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2017년도 세이덴 도서관 영어회화 강사 채용 재공고</th>
+                        <td>2017-01-24</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2017년도 세이덴 도서관 문화 교실 강사 채용 공고</th>
+                        <td>2017-01-12</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1월 세이덴 도서관 휴관일</th>
+                        <td>2016-12-28</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">전자 도서 대출권수 확대 안내(방학 기간)</th>
+                        <td>2016-12-14</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2017년 겨울 방학 특강 수강생 모집 안내</th>
+                        <td>2016-12-08</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">12월 세이덴 도서관 휴관일</th>
+                        <td>2016-11-25</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2016년도 희망 도서 신청 조기마감 안내</th>
+                        <td>2016-11-16</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">동절기 매점 운영 시간 변경</th>
+                        <td>2016-11-14</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2016년 세이덴 도서관 연속 간행물(잡지) 구독 목록 안내</th>
+                        <td>2016-11-04</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2016년도 희망 도서 신청 마감 안내</th>
+                        <td>2016-10-29</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">11월 세이덴 도서관 휴관일</th>
+                        <td>2016-10-28</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">11월 어린이 영어책 읽어주기 프로그램 운영 안내</th>
+                        <td>2016-10-25</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">세이덴 도서관 10월 매직 & 버블쇼 공연 안내</th>
+                        <td>2016-10-06</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10월 세이덴 도서관 휴관일</th>
+                        <td>2016-09-30</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9월 독서의 달 저자 특강 안내(초등 영어 독서가 답이다)</th>
+                        <td>2016-09-05</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9월 독서의 달 - 도서 대출권수 확대 운영 안내</th>
+                        <td>2016-09-05</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+
+                <script>
+                    function initRegisterForm(){
+                        $('#ruserId').val('');
+                        $('#ruserPw').val('');
+                        $('#ruserPwc').val('');
+                        $('#ruserName').val('');
+                        $('#ruserNo').val('');
+                        $('#ruserTel').val('');
+                        $('#ruserEmail').val('');
+                        $('#idAlert').html('');
+                        $('#pwAlert').html('');
+                        $('#noAlert').html('');
+                    }
+                </script>
+
+                <script>
+                    function initFindIdPwForm(){
+                        $('#cuserName').val('');
+                        $('#cuserNo').val('');
+                        $('#cuserTel').val('');
+                        $('#cuserEmail').val('');
+                    }
+                </script>
+                <!--login-->
+                <table class = "loginTable">
+                    <form action = '/login' method = "post">
+                    <tr>
+                        <td><input type = "text" name = "userId" placeholder = "아이디 입력"></td>
+                        <td rowspan="2"><input type = "submit" id = "login" value = "로그인"></td>
+                    </tr>
+                    <tr>
+                        <td><input type = "password" name = "userPw" placeholder = "비밀번호 입력"></td>
+                    </tr>
+                    </form>
+                    <tr>
+                        <td><a href = "#findIdPwLayer" class = "findIdPwLink">아이디/비밀번호 찾기</a></td>
+                        <td><a href = "#registerLayer" class = "registerLink" onclick = "initRegisterForm()">회원가입</a></td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function findIdPw(){
+                var cuserName = $('#cuserName').val();
+                var cuserNo = $('#cuserNo').val();
+                var cuserTel = $('#cuserTel').val();
+                var cuserEmail = $('#cuserEmail').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/findIdPw',
+                    async:false,
+                    data: {
+                        "cuserName": cuserName,
+                        "cuserNo": cuserNo,
+                        "cuserTel":cuserTel,
+                        "cuserEmail":cuserEmail
+                    },
+                    success: function (userInfo) {
+                        if (userInfo == "null") {
+                            alert("해당하는 아이디, 비밀번호가 존재하지 않습니다!");
+                            initFindIdPwForm();
+                        }
+                        else {
+                            alert("회원님의 아이디는 " + userInfo.userId + ", 비밀번호는 " + userInfo.userPw + "입니다!");
+                            initFindIdPwForm();
+                            location.href = "/main";
+                        }
+                    }
+                });
+            }
+        </script>
+
+        <div id="findIdPwLayer">
+            <div id="mask"></div>
+            <div class="findIdPwContent">
+                <div>
+                    <img src = "images/etc/logo3.jpg" id = "logo3">
+                        <hr />
+                        <table>
+                            <tr>
+                                <td><input type="text" name="cuserName" id = "cuserName" placeholder="이름" required = "required"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="cuserNo" id = "cuserNo" placeholder="주민등록번호" required = "required"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="cuserTel" id = "cuserTel" placeholder="연락처" required = "required"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="cuserEmail" id = "cuserEmail" placeholder="이메일" required = "required"></td>
+                            </tr>
+                        </table>
+                        <hr />
+                            <div>
+                            <input type="submit" value="아이디/비밀번호 찾기" id = "findIdPw" onclick = "return findIdPw()">
+                            </div>
+                    </div>
+                <button type="button" id = "fClose">X</button>
+            </div>
+        </div>
+
+        <script>
+            function checkId(){
+                var id = $('#ruserId').val();
+                var checkAjaxSetTimeout;
+
+                if(id.length < 5){
+                    $('#idAlert').css({"color":'red', "fontSize" : 3});
+                    $("#idAlert").html("아이디는 5자 이상 10자 이하입니다!");
+                }
+                else if(id.length >= 5 && id.length <= 10){
+                    clearTimeout(checkAjaxSetTimeout);
+                    checkAjaxSetTimeout = setTimeout(function() {
+                        $.ajax({
+                            type: 'POST',
+                            url: '/checkId',
+                            data: {
+                                "ruserId": id
+                            },
+                            success: function (dupId) {
+                                if (dupId == 1) {
+                                    $('#idAlert').css({"color":'red', "fontSize" : 3});
+                                    $("#idAlert").html("이미 가입된 아이디입니다!");
+                                }
+                                else {
+                                    $('#idAlert').css({"color":'green', "fontSize" : 3});
+                                    $("#idAlert").html("사용 가능한 아이디입니다!");
+                                }
+                            }
+                        }); // end ajax
+                    }, 1000);
+                }
+                else{
+                    $('#idAlert').css({"color":'red', "fontSize" : 3});
+                    $("#idAlert").html("아이디는 5자 이상 10자 이하입니다!");
+                }
+            }
+
+            function checkPw(){
+                var pw = $('#ruserPw').val();
+                var pwc = $('#ruserPwc').val();
+
+                if(pw != pwc){
+                    $('#pwAlert').css({"color":'red', "fontSize" : 3});
+                    $('#pwAlert').html("비밀번호가 일치하지 않습니다!");
+                }
+                else{
+                    $('#pwAlert').css({"color":'green', "fontSize" : 3});
+                    $('#pwAlert').html("비밀번호가 일치합니다!");
+                }
+
+            }
+
+            function checkNo() {
+                var no = $('#ruserNo').val();
+                var checkAjaxSetTimeout;
+
+                if(no.length < 13){
+                    $('#noAlert').css({"color": 'red', "fontSize" : 3});
+                    $("#noAlert").html("주민등록번호는 13자입니다!");
+                }
+                else if (no.length == 13) {
+                    clearTimeout(checkAjaxSetTimeout);
+                    checkAjaxSetTimeout = setTimeout(function () {
+                        $.ajax({
+                            type: 'POST',
+                            url: '/checkNo',
+                            data: {
+                                "ruserNo": no
+                            },
+                            success: function (dupNo) {
+                                if (dupNo == 1) {
+                                    $('#noAlert').css({"color": 'red', "fontSize" : 3});
+                                    $("#noAlert").html("이미 가입된 주민등록번호입니다!");
+                                }
+                                else {
+                                    $('#noAlert').css({"color": 'green', "fontSize" : 3});
+                                    $("#noAlert").html("사용 가능한 주민등록번호입니다!");
+                                }
+                            }
+                        }); // end ajax
+                    }, 1000);
+                }
+                else{
+                    $('#noAlert').css({"color": 'red', "fontSize" : 3});
+                    $("#noAlert").html("주민등록번호는 13자입니다!");
+                }
+            }
+
+            function checkForm(){
+                var idAlert = document.getElementById('idAlert').innerText;
+                var pwAlert = document.getElementById('pwAlert').innerText;
+                var noAlert = document.getElementById('noAlert').innerText;
+
+                if(idAlert == "이미 가입된 아이디입니다!" || idAlert == "아이디는 5자 이상 10자 이하입니다!" || pwAlert == "비밀번호가 일치하지 않습니다!" ||
+                    noAlert == "이미 가입된 주민등록번호입니다!" || noAlert == "주민등록번호는 13자입니다!"){
+                    alert("회원가입 양식에 맞지 않습니다!");
+                    return false;
+                }
+                else{
+                    alert("회원가입이 완료되었습니다!");
+                    return true;
+                }
+            }
+        </script>
+
+        <!--회원가입 modal창-->
+        <div id="registerLayer">
+            <div id="mask"></div>
+            <div class="registerContent">
+                <div>
+                    <img src = "images/etc/logo3.jpg" id = "logo3">
+                    <form action="/register" method="post" name = "registerForm" onsubmit = "return checkForm()">
+                        <hr />
+                        <table>
+                            <tr>
+                                <td><input type="text" name="ruserId" id = "ruserId" placeholder="아이디" onkeyup="checkId()" required = "required"></td>
+                            </tr>
+                            <tr>
+                                <td><span id = "idAlert"></span></td>
+                            </tr>
+                            <tr>
+                                <td><input type="password" name="ruserPw" id = "ruserPw" placeholder="비밀번호" onkeyup="checkPw()" required = "required"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="password" name="ruserPwc" id = "ruserPwc" placeholder="비밀번호 확인" onkeyup="checkPw()" required = "required"></td>
+                            </tr>
+                            <tr>
+                                <td><span id = "pwAlert"></span></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="ruserName" id = "ruserName" placeholder="이름" required = "required"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="ruserNo" id = "ruserNo" placeholder="주민등록번호" onkeyup = "checkNo()" required = "required"></td>
+                            </tr>
+                            <tr>
+                                <td><span id = "noAlert"></span></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="ruserTel" id = "ruserTel" placeholder="연락처" required = "required"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="ruserEmail" id = "ruserEmail" placeholder="이메일" required = "required"></td>
+                            </tr>
+                        </table>
+                        <hr />
+                        <div>
+                            <input type="submit" value="회원가입" id = "register">
+                        </div>
+                    </form>
+                </div>
+                <button type="button" id = "rClose">X</button>
+            </div>
+        </div>
+
+        <div class = "content2">
+            <div>
+                <div id = "calendarView">
+
+                </div>
+                <div id = "calendarImg">
+                    <img src = "images/etc/calendarNotice.jpg" alt = "달력공지">
+                </div>
+            </div>
+
+            <div>
+                <table align = "center" cellpadding="3px">
+                    <tr>
+                        <td>신작 도서</td>
+                    </tr>
+                    <tr>
+                        <td><img src = "images/book/<%=newBook[0].bkNo%>.jpg" width = "240px" height = "260px" id ="newBookImage"></td>
+                    </tr>
+                    <tr align="middle">
+                        <td><span id = "newBookName"><%=newBook[0].bkName%></span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <script>
+                var newBookImage = document.getElementById("newBookImage");
+                var newBookImageArr = ["images/book/<%=newBook[0].bkNo%>.jpg", "images/book/<%=newBook[1].bkNo%>.jpg", "images/book/<%=newBook[2].bkNo%>.jpg", "images/book/<%=newBook[3].bkNo%>.jpg", "images/book/<%=newBook[4].bkNo%>.jpg"];
+                var newBookImageIndex = 0;
+
+                function changeNewBookImage(){
+                    newBookImage.setAttribute('src', newBookImageArr[newBookImageIndex]);
+                    newBookImageIndex++;
+                    if(newBookImageIndex >= newBookImageArr.length){
+                        newBookImageIndex = 0;
+                    }
+                }
+                setInterval(changeNewBookImage, 3000);
+
+                var newBookName = document.getElementById("newBookName");
+                var newBookNameArr = ["<%=newBook[0].bkName%>", "<%=newBook[1].bkName%>", "<%=newBook[2].bkName%>", "<%=newBook[3].bkName%>", "<%=newBook[4].bkName%>"];
+                var newBookNameIndex = 0;
+
+                function changeNewBookName(){
+                    newBookName.innerHTML = newBookNameArr[newBookNameIndex];
+                    newBookNameIndex++;
+                    if(newBookNameIndex >= newBookNameArr.length){
+                        newBookNameIndex = 0;
+                    }
+                }
+                setInterval(changeNewBookName, 3000);
+            </script>
+            <div>
+                <table align = "center" cellpadding="3px">
+                    <tr>
+                        <td>베스트 도서</td>
+                    </tr>
+                    <tr>
+                        <td><img src = "images/book/<%=bestBook[0].bkNo%>.jpg" width = "240px" height = "260px" id ="bestBookImage"></td>
+                    </tr>
+                    <tr align="middle">
+                        <td><span id = "bestBookName"><%=bestBook[0].bkName%></span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <script>
+                var bestBookImage = document.getElementById("bestBookImage");
+                var bestBookImageArr = ["images/book/<%=bestBook[0].bkNo%>.jpg", "images/book/<%=bestBook[1].bkNo%>.jpg", "images/book/<%=bestBook[2].bkNo%>.jpg", "images/book/<%=bestBook[3].bkNo%>.jpg", "images/book/<%=bestBook[4].bkNo%>.jpg"];
+                var bestBookImageIndex = 0;
+
+                function changeBestBookImage(){
+                    bestBookImage.setAttribute('src', bestBookImageArr[bestBookImageIndex]);
+                    bestBookImageIndex++;
+                    if(bestBookImageIndex >= bestBookImageArr.length){
+                        bestBookImageIndex = 0;
+                    }
+                }
+                setInterval(changeBestBookImage, 3000);
+
+                var bestBookName = document.getElementById("bestBookName");
+                var bestBookNameArr = ["<%=bestBook[0].bkName%>", "<%=bestBook[1].bkName%>", "<%=bestBook[2].bkName%>", "<%=bestBook[3].bkName%>", "<%=bestBook[4].bkName%>"];
+                var bestBookNameIndex = 0;
+
+                function changeBestBookName(){
+                    bestBookName.innerHTML = bestBookNameArr[bestBookNameIndex];
+                    bestBookNameIndex++;
+                    if(bestBookNameIndex >= bestBookNameArr.length){
+                        bestBookNameIndex = 0;
+                    }
+                }
+                setInterval(changeBestBookName, 3000);
+            </script>
+        </div>
+    </section>
+
+    <footer>
+        <div id = "private">개인 정보 처리 방침</div>
+        <div id = "path">찾아오시는 길</div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,677 @@
+﻿/* body */
+body{
+    width:1100px;
+    margin:0 auto;
+    font-family:"맑은 고딕";
+    font-weight: bold;
+}
+
+/* header */
+header{
+    margin-top:10px;
+    height:150px;
+}
+
+/* header div */
+header div{
+    margin-top:5px;
+    float:left;
+}
+
+/* header Logo1 */
+header #logo1 {
+    width:350px;
+    height:auto;
+}
+
+/* header Logo2 */
+header #logo2 {
+    width:250px;
+    height:auto;
+}
+
+/* header ul */
+header ul {
+    heigth:143px;
+    width:auto;
+}
+
+/* header ul li */
+header ul li {
+    list-style:none;
+    text-align: center;
+}
+
+/* 도서 검색 입력란 */
+header .search #book {
+    width:350px;
+    font-size:20px;
+    border:1px solid #3488d9;
+    margin-top:5px;
+    padding:5px;
+}
+
+/* 도서 검색 버튼 */
+header .search #search {
+    width:95px; height:38px;
+    margin-left: 10px;
+    border: 0;
+    font-size:1em;
+    font-weight: bold;
+}
+
+/* 로그아웃 버튼 */
+header #logout{
+    width:76px; height:28px;
+    margin-left: 10px;
+    border: 0;
+    color:#000000;
+    font-size:1em;
+    font-weight: bold;
+}
+
+/* 로그아웃 table */
+header #logoutTable{
+    border: 1px solid #cccccc;
+    text-align: center;
+}
+
+/* 로그아웃 table td*/
+header #logoutTable td{
+    padding: 0px;
+    text-align: center;
+}
+
+/* nav */
+nav{
+    width:960px;
+    height:70px;
+    line-height:60px;
+    position:relative;
+    left:50%;
+    margin-left:-589px;
+}
+
+/* nav ul */
+nav ul{
+    width:960px;
+    height:70px;
+}
+
+/* nav ul li */
+nav ul li{
+    overflow:hidden;
+    float:left;
+}
+
+/* nav ul 공지사항 button */
+nav ul #notice {
+    border:4px solid red;
+    box-sizing: content-box;
+    width:232px;
+    height:60px;
+    text-align: center;
+}
+
+/* nav ul 맞춤형 추천 도서 button */
+nav ul #recommend {
+    border:4px solid orange;
+    box-sizing: content-box;
+    width:232px;
+    height:60px;
+    text-align: center;
+}
+
+/* nav ul 대출/예약 현황 button */
+nav ul #borrow {
+    border:4px solid forestgreen;
+    box-sizing: content-box;
+    width:232px;
+    height:60px;
+    text-align: center;
+}
+
+/* nav ul 마이 페이지 button */
+nav ul #mypage {
+    border:4px solid mediumblue;
+    box-sizing: content-box;
+    width:232px;
+    height:60px;
+    text-align: center;
+}
+
+/* nav ul a */
+nav ul li a{
+    text-decoration:none;
+    visibility: visible;
+    padding:0 50px;
+    font-weight:bold;
+    color:#000000;
+}
+
+/* section */
+section {
+    width:960px;
+    height:700px;
+}
+
+/* section a */
+section a {
+    text-decoration: none;
+    visibility: visible;
+    font-weight:bold;
+    color:#000000;
+}
+
+/* section content1 공지사항, 로그인 */
+section .content1{
+    width:960px;
+    height:362px;
+}
+
+/* section content1 div 공지사항, 로그인*/
+section .content1 div{
+    width:341px;
+}
+
+/* section content1 공지사항 */
+section .content1 div:nth-child(1){
+    float:left;
+    width:644px;
+    height:361px;
+    overflow: auto;
+}
+
+/* section content1 공지사항 table */
+section .content1 table.notice {
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+    margin : 0 auto;
+}
+
+/* section content1 공지사항 table th */
+section .content1 table.notice th {
+    width: 500px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+/* section content1 공지사항 table td */
+section .content1 table.notice td {
+    width: 100px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 공지사항 hover시 변경되는 색상 */
+.reverse{
+    background:#F4FA58;
+}
+
+/* section content1 로그인 */
+section .content1 div:nth-child(2){
+    float:left;
+    width:316px;
+    height:361px;
+}
+
+/* section content1 로그인 table */
+section .content1 .loginTable{
+    position:relative; top:50%; left:50%; width:250px; height:100px; margin-left: -125px; margin-top: -50px;
+    border : 1px solid #ccc;
+}
+
+/* section content1 로그인 table tr */
+section .content1 .loginTable tr{
+    text-align: left;
+}
+
+/* section content1 로그인 button */
+section .content1 .loginTable #login{
+    width : 65px;
+    height : 56px;
+    border: 0;
+    font-family:"맑은 고딕";
+    font-weight: bold;
+    font-size:1.0em;
+}
+
+/* section content1 로그아웃 button */
+section .content1 .loginTable #logout{
+    width : 250px;
+    height : 50px;
+    border: 0;
+    color:#000000;
+    font-size:1.2em;
+    font-weight: bold;
+}
+
+/* section 아이디/비밀번호 찾기, 회원 가입 modal창을 열 때 생성되는 background */
+section #mask{
+    width:100%;
+    height:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:10;
+    background:#000;
+    opacity:.5;
+    filter:alpha(opacity=50);
+}
+
+/* 아이디/비밀번호 찾기 modal창 */
+section #findIdPwLayer{
+    display:none;
+    position:relative;
+}
+
+/* 아이디/비밀번호 찾기 modal창 */
+section #findIdPwLayer .findIdPwContent{
+    width:430px;
+    height:500px;
+    padding:20px;
+    border:3px solid #3488d9;
+    position:fixed;
+    left:50%;
+    top:50%;
+    z-index:11;
+    background:#fff;
+}
+
+/* 아이디/비밀번호 찾기 modal창 닫기 button */
+section #findIdPwLayer .findIdPwContent #fClose{
+    width:33px; height:33px;
+    position:absolute;
+    border:0px;
+    right:0;
+    top:0;
+    cursor:pointer;
+    font-family:"맑은 고딕";
+    font-weight: bold;
+    font-size:1.2em;
+}
+
+/* 아이디/비밀번호 찾기 modal창 logo */
+section #findIdPwLayer .findIdPwContent #logo3{
+    width:350px;
+    margin-left: auto; margin-right: auto; display: block;
+}
+
+/* 아이디/비밀번호 찾기 modal창 table, td */
+section #findIdPwLayer table, td{
+    border-spacing: 25px;
+    margin:0 auto;
+}
+
+/* 아이디/비밀번호 찾기 modal창 입력란 */
+section #findIdPwLayer table input{
+    border:1px solid #3488d9;
+    width:300px;
+    height:25px;
+}
+
+/* 아이디/비밀번호 찾기 modal창 아이디/비밀번호 찾기 button */
+section #findIdPw {
+    width:250px; height:50px;
+    margin-left: auto; margin-right: auto; display: block;
+    font-family:"맑은 고딕";
+    font-weight: bold;
+    font-size:1.2em;
+    border:0px;
+}
+
+/* 회원가입 modal창 */
+section #registerLayer{
+    display:none;
+    position:relative;
+}
+
+/* 회원가입 modal창 */
+section #registerLayer .registerContent{
+    width:430px;
+    height:500px;
+    padding:20px;
+    border:3px solid #3488d9;
+    position:fixed;
+    left:50%;
+    top:50%;
+    z-index:11;
+    background:#fff;
+}
+
+/* 회원가입 modal창 닫기 button */
+section #registerLayer .registerContent #rClose {
+    width:33px; height:33px;
+    position:absolute;
+    border:0px;
+    right:0;
+    top:0;
+    cursor:pointer;
+    font-family:"맑은 고딕";
+    font-weight: bold;
+    font-size:1.2em;
+}
+
+/* 회원가입 modal창 logo */
+section #registerLayer .registerContent #logo3{
+    width:350px;
+    margin-left: auto; margin-right: auto; display: block;
+}
+
+/* 회원가입 modal창 table, td */
+section #registerLayer table, td{
+    border-spacing: 4px;
+    margin:0 auto;
+}
+
+/* 회원가입 modal창 입력란 */
+section #registerLayer table input{
+    border:1px solid #3488d9;
+    width:300px;
+    height:18px;
+}
+
+/* 회원가입 modal창 회원가입 button */
+section #register {
+    width:150px; height:40px;
+    margin-left: auto; margin-right: auto; display: block;
+    font-family:"맑은 고딕";
+    font-weight: bold;
+    font-size:1.2em;
+    border:0px;
+}
+
+/* 회원가입 modal창 회원가입 유효성 검사 span */
+section .content1 span {
+    color:#000000;
+    font-size:1.2em;
+    font-weight: bold;
+}
+
+/* section content2 달력, 신작 도서, 베스트 도서 */
+section .content2{
+    width:960px;
+    height:336px;
+}
+
+/* section content2 달력 */
+section .content2 div:nth-child(1){
+    float:left;
+    width:333px;
+    height:336px;
+    position:relative;
+}
+
+/* section content2 달력 */
+section .content2 #calendarView{
+    width:333px;
+    height:246px;
+}
+
+/* section content2 달력 오늘 날짜 */
+td.today {color: #ffffff;   font-weight:bold;  font-size:9pt; background-color: green; }
+
+/* section content2 달력 휴일 */
+td.fullOffday {color: #ffffff;   font-weight:bold;  font-size:9pt; background-color: red; }
+
+/* section content2 달력 부분 휴일 */
+td.partOffday {color: #ffffff;   font-weight:bold;  font-size:9pt; background-color: blue; }
+
+/* section content2 달력 평일 */
+td.workday {color: #000000;    font-weight:normal;  font-size:9pt; }
+
+/* section content2 달력 일요일 */
+td.sunday{color: #cc0033; font-weight:normal;  font-size:9pt; }
+
+/* section content2 달력 토요일 */
+td.satday{color: #0000ff;    font-weight:normal;  font-size:9pt; }
+
+/* section content2 달력 주 */
+td.week  {color: #000000;   font-weight:bold;  font-size:9pt; background-color:#e6e6e6;width: 18px;text-align:center}
+
+/* section content2 달력 주 계산 */
+.preNext {color: #000000;text-decoration: none;}
+
+/* section content2 달력 공지 image */
+section .content2 #calendarImg{
+    width:333px;
+    height:89px;
+    border:0px;
+}
+
+/* section content2 달력 공지 image */
+section .content2 #calendarImg img {
+    width: 255px;
+    heigth: 5px;
+}
+
+/* section content2 신작 도서 */
+section .content2 div:nth-child(2){
+    float:left;
+    width:311px;
+    height:336px;
+    box-sizing:border-box;
+}
+
+/* section content2 베스트 도서 */
+section .content2 div:nth-child(3){
+    float:left;
+    width:316px;
+    height:336px;
+    box-sizing:border-box;
+}
+
+/* section content2 공지사항 */
+section .contentNotice{
+    width:960px;
+    height:700px;
+    border:1px;
+}
+
+/* section content2 공지사항 */
+section .contentNotice div{
+    width:960px;
+    height:700px;
+    border:1px;
+    overflow: auto;
+}
+
+/* section content2 공지사항 table */
+section .contentNotice table .notice {
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+    margin : 0 auto;
+}
+
+/* section content2 공지사항 table th */
+section .contentNotice table.notice th {
+    width: 700px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+/* section content2 공지사항 table td */
+section .contentNotice table.notice td {
+    width: 260px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+/* section content2 도서 검색 */
+section #searchDiv{
+    width: 958px;
+    height: 697px;
+    border: 1px solid #cccccc;
+}
+
+/* section content2 도서 검색 */
+section #searchDivDetail{
+    width: 858px;
+    height: 610px;
+    margin:40px 40px auto;
+}
+
+/* section content2 도서 검색 검색된 도서 hover시 변경되는 색상 */
+section #searchDiv #searchDivDetail #bookName:hover{
+    color:#0000ff
+}
+
+/* section content2 도서 상세 보기 td */
+section #searchDiv #searchDivDetail #bookInfo td {
+    padding: 12px;
+}
+
+/* section content2 도서 상세 보기 도서 위치 table */
+section #searchDiv #bookLocate{
+    width: 450px;
+    height: 250px;
+    border-spacing: 10px 10px;
+    text-align: center;
+}
+
+/* section content2 도서 상세 보기 도서 위치 table td */
+section #searchDiv  #bookLocate, #bookLocate td{
+    border:1px solid black;
+}
+
+/* section content2 맞춤형 추천 도서 */
+section #customizeDiv{
+    width: 958px;
+    height: 697px;
+    border: 1px solid #cccccc;
+}
+
+/* section content2 맞춤형 추천 도서 */
+section #customizeDivDetail{
+    width: 858px;
+    height: 610px;
+    margin:40px 40px auto;
+}
+
+/* section content2 맞춤형 추천 도서 button */
+section #customizeDivDetail #customize_btn{
+    width: 60px;
+    height: 36px;
+    border:0px;
+    font-size:1.0em;
+    font-weight: bold;
+}
+
+/* section content2 마이 페이지 */
+section #myPageDiv{
+    width: 958px;
+    height: 697px;
+    border: 1px solid #cccccc;
+}
+
+/* section content2 마이 페이지 회원 정보 수정 */
+section #myPageUpdate{
+    width: 858px;
+    height: 610px;
+    margin:40px 40px auto;
+}
+
+/* section content2 마이 페이지 회원 정보 수정 text 입력란 */
+section #myPageUpdate #myPageUpdateTable input[type=text]{
+    width: 300px;
+    height: 30px;
+}
+
+/* section content2 마이 페이지 회원 정보 수정 password 입력란 */
+section #myPageUpdate #myPageUpdateTable input[type=password]{
+    width: 300px;
+    height: 30px;
+}
+
+/* section content2 마이 페이지 회원 정보 수정 button */
+section #myPageUpdate_btn{
+    width:70px;
+    height:50px;
+    border:0px;
+    font-family: "맑은 고딕";
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* section content2 대출/예약 현황 */
+section #myPageBorrow{
+    width: 858px;
+    height: 385px;
+    margin:0 40px auto;
+}
+
+/* section content2 대출/예약 현황 */
+section #borrowReserveDiv{
+    width: 958px;
+    height: 697px;
+    border: 1px solid #cccccc;
+}
+
+/* section content2 대출 현황 */
+section #borrowDiv{
+    width: 858px;
+    height: 270px;
+    margin:40px 40px auto;
+}
+
+/* section content2 대출 현황 */
+section #borrowDetailDiv{
+    width: 858px;
+    height: 200px;
+    overflow: auto;
+}
+
+/* section content2 예약 현황 */
+section #reserveDiv{
+    width: 858px;
+    height: 385px;
+    margin:0 40px auto;
+}
+
+/* section content2 예약 현황 */
+section #reserveDetailDiv{
+    width: 858px;
+    height: 270px;
+    overflow: auto;
+}
+
+/* footer 개인정보처리방침, 찾아오시는 길 */
+footer{
+    margin-bottom:10px;
+    width:958px;
+    height:60px;
+    border: 1px solid #cccccc;
+}
+
+/* footer 개인정보처리방침 */
+footer #private{
+    width:450px;
+    height:60px;
+    float:left;
+    text-align: center;
+    line-height: 55px;
+}
+
+/* footer 찾아오시는 길 */
+footer #path{
+    width:450px;
+    height:60px;
+    float:right;
+    text-align: center;
+    line-height: 55px;
+}
+
