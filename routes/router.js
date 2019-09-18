@@ -6,6 +6,11 @@ var user = require('../models/user');
 var book = require('../models/book');
 var borrowReserve = require('../models/borrowReserve');
 
+// 테스트용 메인 페이지
+router.get('/', function (req, res){
+    book.slideBook(req, res);
+});
+
 // 메인 페이지
 router.get('/main', function (req, res){
     book.slideBook(req, res);
